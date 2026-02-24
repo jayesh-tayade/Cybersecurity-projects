@@ -1,14 +1,13 @@
 # 🔐 Secure File Locker using Hybrid Cryptography
 
 ## 📌 Description
-This project implements a secure file encryption system using hybrid cryptography.
-AES is used to encrypt files, RSA is used to encrypt the AES key, and SHA-256 is used
-for password authentication.
+This project implements a secure file encryption system using a hybrid cryptographic approach.
+AES is used for fast file encryption, while RSA is used to securely encrypt the AES key.
+The system is visualized using a Streamlit-based web interface.
 
 ## 🔑 Cryptography Algorithms Used
 - AES (Symmetric Encryption)
 - RSA (Asymmetric Encryption)
-- SHA-256 (Password Hashing)
 
 ## Technologies Used
 - Python
@@ -16,10 +15,11 @@ for password authentication.
 - Streamlit
 
 ## 🏗️ How It Works
-1. User sets a password (stored as SHA-256 hash)
-2. File is encrypted using AES
-3. AES key is encrypted using RSA public key
-4. Decryption requires correct password and RSA private key
+1. User uploads a file through the Streamlit interface
+2. The file is encrypted using AES (CBC mode)
+3. The AES key is encrypted using RSA public key
+4. Encrypted file and encrypted AES key are stored securely
+5. Decryption uses the RSA private key to restore the original file
 
 ## RSA Key Generation
 
@@ -45,3 +45,8 @@ Place the generated keys inside the keys/ folder.
    pip install streamlit pycryptodome
 2. Run the app:
    python -m streamlit run app.py
+
+### 📌 Security Notes
+- Private RSA keys must never be shared
+- Loss of private key results in permanent data loss
+- Files are processed in binary mode to prevent corruption
