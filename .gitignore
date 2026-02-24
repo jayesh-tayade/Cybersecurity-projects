@@ -1,0 +1,18 @@
+# Ignore runtime files
+files/*
+keys/*
+
+# Allow folder structure
+!files/.gitkeep
+!keys/.gitkeep
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
