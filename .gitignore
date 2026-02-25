@@ -18,5 +18,5 @@ __pycache__/
 Thumbs.db
 
 #private key
-private_key.pem
-public_key.pem
+private.pem
+public.pem
